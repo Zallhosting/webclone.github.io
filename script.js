@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const products = [
-    { id: 1, name: "Internet Quota", price: 50000 },
-    { id: 2, name: "Phone Credit", price: 20000 },
-    { id: 3, name: "PLN Token", price: 100000 },
+    { id: 1, name: "Internet Quota", price: 50000, image: "https://via.placeholder.com/250x150?text=Internet+Quota" },
+    { id: 2, name: "Phone Credit", price: 20000, image: "https://via.placeholder.com/250x150?text=Phone+Credit" },
+    { id: 3, name: "PLN Token", price: 100000, image: "https://via.placeholder.com/250x150?text=PLN+Token" },
   ];
 
   const productList = document.getElementById("product-list");
@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const productElement = document.createElement("div");
     productElement.classList.add("product");
     productElement.innerHTML = `
+      <img src="${product.image}" alt="${product.name}">
       <h3>${product.name}</h3>
       <p>Price: Rp${product.price}</p>
       <button onclick="addToCart(${product.id})">Add to Cart</button>
